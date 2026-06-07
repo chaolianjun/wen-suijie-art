@@ -877,11 +877,18 @@ function imgPathChild(f) { return './web_tongqu/' + encodeURI(f); }
 
 function renderFilter(cid, chapters, current, onSelect) {
   var c = document.getElementById(cid);
-  var h = '<button class="chapter-btn' + (current === 'all' ? ' active' : '') + '" onclick="' + onSelect.name + "(\\'all\\')" + '">' + t('chapter_all') + '</button>';
+  var h = '<button class="chapter-btn' + (current === 'all' ? ' active' : '') + '" data-chapter="all">' + t('chapter_all') + '</button>';
   chapters.forEach(function(ch) {
-    h += '<button class="chapter-btn' + (current === ch ? ' active' : '') + '" onclick="' + onSelect.name + "(\\'" + ch + "\\')" + '">' + ch + '</button>';
+    h += '<button class="chapter-btn' + (current === ch ? ' active' : '') + '" data-chapter="' + ch + '">' + ch + '</button>';
   });
   c.innerHTML = h;
+  // 事件委托：点击容器内任意按钮
+  c.onclick = function(e) {
+    var btn = e.target.closest('.chapter-btn');
+    if (!btn) return;
+    var chapter = btn.getAttribute('data-chapter');
+    if (chapter) onSelect(chapter);
+  };
 }
 
 function selectFigureChapter(ch) {
