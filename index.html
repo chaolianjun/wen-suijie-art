@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="温素洁 — 中国画人物画家。师从张惠斌、纪清远、卢平，作品以工笔仕女见长，兼擅民俗风情与童趣题材。">
+<meta name="keywords" content="温素洁,中国画,工笔仕女,人物画,画家,张惠斌,纪清远">
+<title>温素洁 — 中国画人物画家</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   温素洁艺术家个人网站 — 设计系统 v2
+   风格：宣纸暖色 + 水墨晕染 + 印章红 + 留白
+   增强：祥云纹 · 回纹边框 · 装裱画框 · 山水 · 竹影 · 印章落款
+   ═══════════════════════════════════════════════ */
+:root {
+  --paper: #faf6f0;
+  --paper-dark: #f0ebe0;
+  --paper-warm: #f5ede0;
+  --ink: #2c2416;
+  --ink-light: #5c5446;
+  --ink-wash: rgba(44,36,22,0.06);
+  --ochre: #8b7355;
+  --ochre-light: #b5a88a;
+  --seal: #c41e3a;
+  --seal-dark: #9a1829;
+  --seal-light: rgba(196,30,58,0.08);
+  --gold: #b8944c;
+  --gold-light: #d4b96a;
+  --jade: #5b8c5a;
+  --jade-light: rgba(91,140,90,0.1);
+  --indigo: #4a6fa5;
+  --deep: #1a1612;
+  --white: #fefefe;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+  --radius: 4px;
+  --radius-lg: 8px;
+  --serif: "Noto Serif SC", "STSong", "SimSun", "Songti SC", serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --brush: "Ma Shan Zheng", "STKaiti", "Kaiti SC", cursive;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══ Traditional Pattern Background ═══ */
+body::before {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none; z-index: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 15 L45 15 L37 22 L40 32 L30 26 L20 32 L23 22 L15 15 L25 15 Z' fill='none' stroke='%23b5a88a' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  opacity: 0.4;
+}
+
+/* ═══ Navigation ═══ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+.nav.scrolled {
+  background: rgba(250,246,240,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  padding: 10px 40px;
+}
+.nav-brand {
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 700;
+  color: var(--ink); letter-spacing: 0.08em; text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-seal {
+  display: inline-flex; width: 32px; height: 32px;
+  align-items: center; justify-content: center;
+  background: var(--seal); color: #fff;
+  font-size: 0.75rem; font-family: var(--serif);
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 rgba(196,30,58,0.2);
+  position: relative;
+}
+.nav-seal::after {
+  content: ''; position: absolute; inset: 2px;
+  border: 1px solid rgba(255,255,255,0.3); border-radius: 1px;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem; color: var(--ink-light); text-decoration: none;
+  letter-spacing: 0.04em; transition: color 0.3s; position: relative;
+  font-family: var(--serif);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--seal); }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--seal);
+}
+.lang-btn {
+  background: none; border: 1px solid var(--ochre-light);
+  color: var(--ochre); padding: 4px 12px; font-size: 0.75rem;
+  cursor: pointer; border-radius: var(--radius); transition: all 0.3s;
+  font-family: var(--sans);
+}
+.lang-btn:hover { border-color: var(--seal); color: var(--seal); }
+.menu-btn { display: none; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--ink); }
+
+/* ═══ Hero — Mountain Landscape ═══ */
+.hero {
+  position: relative; height: 100vh; min-height: 700px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+  background: linear-gradient(180deg, #e8ddd0 0%, #f0e8d8 30%, #faf6f0 60%, #efe5d5 100%);
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(139,115,85,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(196,30,58,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(184,148,76,0.05) 0%, transparent 50%);
+  animation: inkFlow 20s ease-in-out infinite;
+}
+@keyframes inkFlow {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(1%, -1%) rotate(0.5deg); }
+  66% { transform: translate(-1%, 1%) rotate(-0.5deg); }
+}
+
+/* Mountain silhouette at bottom of hero */
+.hero-mountains {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 220px; pointer-events: none; z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
+.hero-ornament {
+  font-family: var(--brush); font-size: 1.1rem; color: var(--ochre); letter-spacing: 0.3em;
+  margin-bottom: 20px; opacity: 0; animation: fadeUp 1s ease 0.3s forwards;
+}
+.hero-title {
+  font-family: var(--serif); font-size: clamp(3.2rem, 8vw, 6.5rem); font-weight: 900;
+  color: var(--ink); letter-spacing: 0.15em; margin-bottom: 16px;
+  opacity: 0; animation: fadeUp 1s ease 0.5s forwards;
+  text-shadow: 2px 2px 0 rgba(139,115,85,0.1);
+}
+.hero-subtitle {
+  font-family: var(--serif); font-size: 1.15rem; color: var(--ink-light); letter-spacing: 0.12em;
+  margin-bottom: 40px; opacity: 0; animation: fadeUp 1s ease 0.7s forwards;
+}
+.hero-seal {
+  display: inline-flex; width: 64px; height: 64px;
+  align-items: center; justify-content: center;
+  background: var(--seal); color: #fff;
+  font-family: var(--serif); font-size: 1.6rem; border-radius: 3px;
+  opacity: 0; animation: fadeUp 1s ease 0.9s forwards;
+  box-shadow: 3px 3px 0 rgba(196,30,58,0.2), 0 4px 20px rgba(196,30,58,0.25);
+  position: relative;
+}
+.hero-seal::after {
+  content: ''; position: absolute; inset: 3px;
+  border: 1.5px solid rgba(255,255,255,0.35); border-radius: 1px;
+}
+.hero-scroll {
+  position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
+  color: var(--ochre-light); font-size: 0.75rem; letter-spacing: 0.1em;
+  cursor: pointer; opacity: 0; animation: fadeUp 1s ease 1.2s forwards;
+  z-index: 2;
+}
+.hero-scroll::after {
+  content: ''; display: block; width: 1px; height: 40px;
+  background: linear-gradient(var(--ochre-light), transparent);
+  margin: 8px auto 0;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══ Cloud Decoration (祥云) ═══ */
+.cloud-divider {
+  position: relative; height: 80px; overflow: hidden;
+  margin: -1px 0;
+}
+.cloud-divider svg { width: 100%; height: 100%; }
+
+/* ═══ Section Common ═══ */
+.section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; position: relative; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-subtitle {
+  font-size: 0.8rem; color: var(--ochre); letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--serif); font-size: 2.4rem; font-weight: 700;
+  color: var(--ink); letter-spacing: 0.08em; margin-bottom: 16px;
+}
+.section-divider {
+  width: 80px; height: 2px; margin: 16px auto; position: relative;
+  background: linear-gradient(90deg, transparent, var(--ochre-light), transparent);
+}
+.section-divider::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; height: 10px; background: var(--seal);
+  border-radius: 50%; box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--seal);
+}
+
+/* ═══ Ink Wash Section Divider ═══ */
+.ink-divider {
+  position: relative; height: 120px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.ink-divider::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 50%;
+  height: 1px; background: linear-gradient(90deg, transparent 5%, var(--ochre-light) 50%, transparent 95%);
+}
+.ink-divider .divider-seal {
+  width: 36px; height: 36px; background: var(--seal);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: var(--serif); font-size: 0.85rem;
+  border-radius: 2px; z-index: 1;
+  box-shadow: 2px 2px 0 rgba(196,30,58,0.15);
+  position: relative;
+}
+.ink-divider .divider-seal::after {
+  content: ''; position: absolute; inset: 2px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* ═══ About — With Mounting Frame ═══ */
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+.about-photo-wrap {
+  position: relative; padding: 12px;
+  background: linear-gradient(135deg, #f8f3ea, #efe8db);
+  border: 1px solid rgba(139,115,85,0.15);
+  box-shadow: var(--shadow-lg);
+}
+.about-photo-wrap::before {
+  content: ''; position: absolute; inset: 6px;
+  border: 1px solid rgba(196,30,58,0.12);
+  pointer-events: none;
+}
+/* Traditional mounting strips */
+.about-photo-wrap::after {
+  content: ''; position: absolute; top: 6px; bottom: 6px; left: 50%;
+  width: 2px; background: linear-gradient(transparent, rgba(196,30,58,0.08), transparent);
+  pointer-events: none;
+}
+.about-photo {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--paper-dark);
+  filter: sepia(0.05) contrast(1.02);
+}
+.about-photo-placeholder {
+  width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--paper-dark), var(--paper));
+  border-radius: var(--radius); display: flex; align-items: center;
+  justify-content: center; font-family: var(--serif);
+  font-size: 2rem; color: var(--ochre-light);
+}
+.about-text p { font-size: 0.95rem; color: var(--ink-light); margin-bottom: 20px; text-indent: 2em; line-height: 2; }
+.about-text .highlight { color: var(--seal); font-weight: 600; }
+
+/* Vertical poem card next to photo */
+.about-poem {
+  position: absolute; right: -8px; top: 20px; z-index: 3;
+  writing-mode: vertical-rl; font-family: var(--brush);
+  font-size: 0.9rem; color: var(--ochre);
+  letter-spacing: 0.3em; line-height: 2;
+  background: rgba(250,246,240,0.9);
+  padding: 8px 4px; border-left: 1px solid rgba(196,30,58,0.2);
+}
+
+/* Timeline with Chinese style */
+.timeline {
+  margin-top: 40px; position: relative; padding-left: 20px;
+  border-left: 1px solid var(--ochre-light);
+}
+.timeline-item {
+  position: relative; padding: 10px 0 20px 24px;
+  font-size: 0.85rem; color: var(--ink-light);
+  transition: color 0.3s;
+}
+.timeline-item:hover { color: var(--ink); }
+.timeline-item::before {
+  content: ''; position: absolute; left: -25px; top: 16px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--seal);
+  box-shadow: 0 0 0 3px var(--paper);
+}
+.timeline-year {
+  font-weight: 700; color: var(--seal); margin-right: 8px;
+  font-size: 0.8rem; font-family: var(--serif);
+}
+
+/* ═══ Gallery — Mounting Frame Style ═══ */
+.chapter-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 40px; }
+.chapter-btn {
+  padding: 8px 20px; background: none; border: 1px solid var(--ochre-light);
+  color: var(--ochre); font-size: 0.82rem; cursor: pointer;
+  border-radius: var(--radius); transition: all 0.3s;
+  font-family: var(--serif); letter-spacing: 0.06em;
+}
+.chapter-btn:hover, .chapter-btn.active {
+  background: var(--ink); border-color: var(--ink); color: var(--paper);
+}
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.gallery-item {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  cursor: pointer; transition: all 0.4s ease;
+  background: var(--paper-dark); aspect-ratio: 3/4;
+  /* Mounting frame effect */
+  border: 6px solid #f0e8db;
+  box-shadow:
+    inset 0 0 0 1px rgba(139,115,85,0.12),
+    0 4px 16px rgba(0,0,0,0.08),
+    0 1px 0 #e0d5c5;
+}
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 0 0 1px rgba(139,115,85,0.12),
+    0 12px 40px rgba(0,0,0,0.15),
+    0 2px 0 #e0d5c5;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.03); }
+.gallery-item-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65)); color: #fff;
+}
+.gallery-item-title {
+  font-family: var(--serif); font-size: 0.95rem; font-weight: 600;
+  margin-bottom: 2px; letter-spacing: 0.04em;
+}
+.gallery-item-meta { font-size: 0.7rem; opacity: 0.8; }
+.gallery-item-seal {
+  position: absolute; top: 12px; right: 12px;
+  width: 24px; height: 24px; background: var(--seal);
+  border-radius: 1px; opacity: 0;
+  transition: opacity 0.3s; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.5rem; font-family: var(--serif);
+}
+.gallery-item:hover .gallery-item-seal { opacity: 0.7; }
+.gallery-item.hidden { display: none; }
+
+/* ═══ Lightbox ═══ */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(26,22,18,0.95);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+}
+.lightbox.active { opacity: 1; pointer-events: auto; }
+.lightbox-close {
+  position: absolute; top: 24px; right: 24px; background: none; border: none;
+  color: #fff; font-size: 2rem; cursor: pointer; z-index: 10;
+  opacity: 0.7; transition: opacity 0.3s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-prev, .lightbox-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: #fff; font-size: 2rem; width: 48px; height: 80px;
+  cursor: pointer; z-index: 10; transition: background 0.3s;
+}
+.lightbox-prev { left: 16px; border-radius: 0 var(--radius) var(--radius) 0; }
+.lightbox-next { right: 16px; border-radius: var(--radius) 0 0 var(--radius); }
+.lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.15); }
+.lightbox-content { display: flex; flex-direction: column; align-items: center; max-width: 90vw; max-height: 90vh; }
+.lightbox-img {
+  max-width: 85vw; max-height: 70vh; object-fit: contain;
+  border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,0.5); cursor: pointer;
+  border: 4px solid #f0e8db;
+}
+.lightbox-caption {
+  color: #fff; text-align: center; margin-top: 16px;
+  font-size: 0.9rem; opacity: 0.8; font-family: var(--serif);
+}
+.lightbox-commentary {
+  color: var(--ochre-light); text-align: center; max-width: 600px;
+  margin-top: 12px; font-size: 0.82rem; line-height: 1.6; font-style: italic;
+}
+.lightbox-counter { color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-top: 8px; }
+
+/* ═══ Testimonials — Scroll/书法卷轴 Style ═══ */
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+.testimonial-card {
+  background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-lg); padding: 40px; position: relative;
+  box-shadow: var(--shadow-md); transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+.testimonial-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+/* Fretwork pattern border at top */
+.testimonial-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--seal) 0px, var(--seal) 8px,
+    transparent 8px, transparent 12px,
+    var(--gold) 12px, var(--gold) 20px,
+    transparent 20px, transparent 24px
+  );
+  opacity: 0.6;
+}
+.testimonial-quote-mark {
+  position: absolute; top: 20px; left: 24px;
+  font-family: var(--serif); font-size: 5rem; color: var(--seal);
+  opacity: 0.12; line-height: 1;
+}
+.testimonial-text {
+  font-family: var(--serif); font-size: 1.05rem; color: var(--ink);
+  line-height: 2; position: relative; z-index: 1;
+  text-indent: 2em;
+}
+.testimonial-author { margin-top: 24px; font-size: 0.85rem; color: var(--seal); font-weight: 600; font-family: var(--serif); }
+.testimonial-role { font-size: 0.75rem; color: var(--ochre); margin-top: 4px; }
+.testimonial-stamp {
+  position: absolute; bottom: 16px; right: 20px;
+  width: 40px; height: 40px; border: 2px solid var(--seal);
+  border-radius: 2px; display: flex; align-items: center;
+  justify-content: center; color: var(--seal);
+  font-family: var(--serif); font-size: 0.85rem;
+  opacity: 0.25; transform: rotate(-5deg);
+}
+
+/* ═══ Photo Wall ═══ */
+.photo-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.photo-item {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  cursor: pointer; background: var(--paper-dark);
+  border: 4px solid #f0e8db;
+  box-shadow: var(--shadow-sm);
+}
+.photo-item img {
+  width: 100%; height: auto; display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: sepia(0.08) contrast(1.02);
+}
+.photo-item:hover img { transform: scale(1.03); filter: sepia(0) contrast(1); }
+.photo-item-caption {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff;
+  font-size: 0.78rem; opacity: 0; transition: opacity 0.3s;
+}
+.photo-item:hover .photo-item-caption { opacity: 1; }
+
+/* ═══ Contact — Ink Background ═══ */
+.contact {
+  background: var(--deep); color: #ccc; padding: 80px 40px 40px;
+  text-align: center; position: relative; overflow: hidden;
+}
+/* Subtle mountain silhouette */
+.contact::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 120px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120 L0,80 Q120,20 240,60 Q360,100 480,50 Q600,0 720,40 Q840,80 960,30 Q1080,0 1200,50 Q1320,90 1440,60 L1440,120 Z' fill='%232a2318' opacity='0.3'/%3E%3C/svg%3E") no-repeat top center;
+  background-size: 100% auto;
+  pointer-events: none;
+}
+.contact .section-title { color: var(--paper); }
+.contact .section-subtitle { color: var(--ochre-light); }
+.contact-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px; max-width: 800px; margin: 40px auto 0;
+}
+.contact-item { padding: 20px; }
+.contact-label {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--ochre-light); margin-bottom: 8px;
+}
+.contact-value { font-family: var(--serif); font-size: 1rem; color: var(--paper); }
+.contact-footer {
+  margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.75rem; color: rgba(255,255,255,0.4);
+}
+.contact-footer-seal {
+  display: inline-flex; width: 28px; height: 28px;
+  align-items: center; justify-content: center;
+  background: var(--seal); color: #fff; font-family: var(--serif);
+  font-size: 0.6rem; border-radius: 2px;
+  vertical-align: middle; margin-right: 8px;
+  position: relative;
+}
+.contact-footer-seal::after {
+  content: ''; position: absolute; inset: 2px;
+  border: 0.5px solid rgba(255,255,255,0.3);
+}
+
+/* ═══ Scroll Animation ═══ */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══ Bamboo Decoration (竹影) ═══ */
+.bamboo-decoration {
+  position: absolute; top: 0; bottom: 0; width: 40px;
+  pointer-events: none; opacity: 0.06; z-index: 0;
+}
+.bamboo-decoration.left { left: -20px; }
+.bamboo-decoration.right { right: -20px; }
+
+/* ═══ Responsive ═══ */
+@media (max-width: 768px) {
+  .nav { padding: 12px 20px; }
+  .nav.scrolled { padding: 8px 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: var(--paper);
+    padding: 20px; box-shadow: var(--shadow-md); gap: 16px;
+  }
+  .menu-btn { display: block; }
+  .section { padding: 60px 20px; }
+  .section-title { font-size: 1.6rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 30px; }
+  .about-poem { display: none; }
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .gallery-item { border-width: 4px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .photo-wall { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .lightbox-prev, .lightbox-next { width: 36px; height: 56px; font-size: 1.4rem; }
+  .lightbox-img { max-width: 95vw; max-height: 60vh; }
+  .hero-mountains { height: 120px; }
+}
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .photo-wall { grid-template-columns: 1fr; }
+  .testimonial-card { padding: 24px; }
+  .gallery-item { border-width: 3px; }
+}
+</style>
+</head>
+<body>
+<!-- ═══ Navigation ═══ -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-brand">
+    <span class="nav-seal">素</span>
+    <span data-i18n="brand">温素洁</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" data-nav="about" data-i18n="nav_about">关于</a></li>
+    <li><a href="#gallery-figure" data-nav="gallery-figure" data-i18n="nav_figure">人物卷</a></li>
+    <li><a href="#gallery-child" data-nav="gallery-child" data-i18n="nav_child">童趣卷</a></li>
+    <li><a href="#testimonials" data-nav="testimonials" data-i18n="nav_testimonials">恩师评语</a></li>
+    <li><a href="#photos" data-nav="photos" data-i18n="nav_photos">名家合影</a></li>
+    <li><a href="#contact" data-nav="contact" data-i18n="nav_contact">联系</a></li>
+    <li><button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button></li>
+  </ul>
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
+</nav>
+
+<!-- ═══ Hero ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-ornament" data-i18n="hero_ornament">中国画人物画家</div>
+    <h1 class="hero-title" data-i18n="hero_title">温素洁</h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">以笔墨写时代 · 以丹青传心声</p>
+    <div class="hero-seal">素</div>
+  </div>
+  <!-- Mountain silhouette SVG -->
+  <div class="hero-mountains">
+    <svg viewBox="0 0 1440 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:100%;">
+      <path d="M0,220 L0,160 Q60,120 120,140 Q200,100 300,130 Q380,80 480,110 Q560,60 680,100 Q780,70 880,90 Q960,50 1060,80 Q1150,40 1260,70 Q1340,90 1440,60 L1440,220 Z" fill="#f0ebe0" opacity="0.6"/>
+      <path d="M0,220 L0,180 Q100,140 200,160 Q300,120 420,150 Q540,100 660,130 Q780,90 900,120 Q1020,80 1140,110 Q1260,90 1440,100 L1440,220 Z" fill="#ebe5d5" opacity="0.8"/>
+      <path d="M0,220 L0,195 Q160,175 320,185 Q500,165 680,180 Q860,160 1040,175 Q1220,168 1440,180 L1440,220 Z" fill="#faf6f0"/>
+    </svg>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" data-i18n="hero_scroll">向下探索</div>
+</section>
+
+<!-- ═══ Cloud Divider ═══ -->
+<div class="cloud-divider">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <g opacity="0.08" fill="none" stroke="#8b7355" stroke-width="0.8">
+      <path d="M200,40 Q220,20 240,35 Q260,15 280,35 Q300,20 320,40"/>
+      <path d="M500,35 Q520,15 540,30 Q560,10 580,30 Q600,15 620,35"/>
+      <path d="M800,38 Q820,18 840,33 Q860,13 880,33 Q900,18 920,38"/>
+      <path d="M1100,35 Q1120,15 1140,30 Q1160,10 1180,30 Q1200,15 1220,35"/>
+    </g>
+  </svg>
+</div>
+
+<!-- ═══ About ═══ -->
+<section class="section" id="about">
+  <div class="section-header reveal">
+    <div class="section-subtitle" data-i18n="about_subtitle">About the Artist</div>
+    <h2 class="section-title" data-i18n="about_title">关于艺术家</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="about-grid reveal">
+    <div style="position:relative">
+      <div class="about-photo-wrap">
+        <img class="about-photo" id="artistPhoto" src="images/artist-photo.jpg" alt="艺术家肖像" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=about-photo-placeholder>艺<br>术<br>家</div>'">
+      </div>
+      <div class="about-poem">笔墨千秋<br>丹青万代</div>
+    </div>
+    <div class="about-text">
+      <p id="bioText"></p>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Ink Divider with Seal ═══ -->
+<div class="ink-divider">
+  <div class="divider-seal">画</div>
+</div>
+
+<!-- ═══ Gallery: 人物卷 ═══ -->
+<section class="section" id="gallery-figure">
+  <div class="section-header reveal">
+    <div class="section-subtitle" data-i18n="figure_subtitle">Figure Paintings</div>
+    <h2 class="section-title" data-i18n="figure_title">人物卷</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="chapter-filter reveal" id="filterFigure"></div>
+  <div class="gallery-grid" id="galleryFigure"></div>
+</section>
+
+<!-- ═══ Cloud Divider ═══ -->
+<div class="cloud-divider">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <g opacity="0.08" fill="none" stroke="#8b7355" stroke-width="0.8">
+      <path d="M300,40 Q320,20 340,35 Q360,15 380,35 Q400,20 420,40"/>
+      <path d="M600,35 Q620,15 640,30 Q660,10 680,30 Q700,15 720,35"/>
+      <path d="M900,38 Q920,18 940,33 Q960,13 980,33 Q1000,18 1020,38"/>
+    </g>
+  </svg>
+</div>
+
+<!-- ═══ Gallery: 童趣卷 ═══ -->
+<section class="section" id="gallery-child">
+  <div class="section-header reveal">
+    <div class="section-subtitle" data-i18n="child_subtitle">Childhood & Innocence</div>
+    <h2 class="section-title" data-i18n="child_title">童趣卷</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="chapter-filter reveal" id="filterChild"></div>
+  <div class="gallery-grid" id="galleryChild"></div>
+</section>
+
+<!-- ═══ Ink Divider with Seal ═══ -->
+<div class="ink-divider">
+  <div class="divider-seal">师</div>
+</div>
+
+<!-- ═══ Testimonials ═══ -->
+<section class="section" id="testimonials">
+  <div class="section-header reveal">
+    <div class="section-subtitle" data-i18n="testimonials_subtitle">Teacher Testimonials</div>
+    <h2 class="section-title" data-i18n="testimonials_title">恩师评语</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="testimonials-grid reveal" id="testimonialsGrid"></div>
+</section>
+
+<!-- ═══ Cloud Divider ═══ -->
+<div class="cloud-divider">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <g opacity="0.08" fill="none" stroke="#8b7355" stroke-width="0.8">
+      <path d="M150,40 Q170,20 190,35 Q210,15 230,35 Q250,20 270,40"/>
+      <path d="M700,35 Q720,15 740,30 Q760,10 780,30 Q800,15 820,35"/>
+      <path d="M1050,38 Q1070,18 1090,33 Q1110,13 1130,33 Q1150,18 1170,38"/>
+    </g>
+  </svg>
+</div>
+
+<!-- ═══ Photos with Masters ═══ -->
+<section class="section" id="photos">
+  <div class="section-header reveal">
+    <div class="section-subtitle" data-i18n="photos_subtitle">Photos with Masters</div>
+    <h2 class="section-title" data-i18n="photos_title">名家合影</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="photo-wall reveal" id="photoWall"></div>
+</section>
+
+<!-- ═══ Contact ═══ -->
+<footer class="contact" id="contact">
+  <div class="section-header reveal">
+    <div class="section-subtitle" data-i18n="contact_subtitle">Get in Touch</div>
+    <h2 class="section-title" data-i18n="contact_title">联系方式</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-grid reveal">
+    <div class="contact-item">
+      <div class="contact-label" data-i18n="contact_phone">手机</div>
+      <div class="contact-value">15101197099</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">微信</div>
+      <div class="contact-value">xueyingzhai</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">QQ</div>
+      <div class="contact-value">1176688372</div>
+    </div>
+  </div>
+  <div class="contact-footer">
+    <span class="contact-footer-seal">素</span>
+    <p>&copy; 2026 All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ═══ Lightbox ═══ -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-prev" onclick="lbNav(-1)">&#8249;</button>
+  <button class="lightbox-next" onclick="lbNav(1)">&#8250;</button>
+  <div class="lightbox-content">
+    <img class="lightbox-img" id="lbImg" src="" alt="" onclick="closeLightbox()">
+    <div class="lightbox-caption" id="lbCaption"></div>
+    <div class="lightbox-commentary" id="lbCommentary"></div>
+    <div class="lightbox-counter" id="lbCounter"></div>
+  </div>
+</div>
+
+<script>
+
+// ═══════════════════════════════════════════════
+//  温素洁艺术家个人网站 — Main JavaScript v2
+// ═══════════════════════════════════════════════
+
+
+// ─── DATA ───
+// 人物卷数据
+const RENWU_DATA = [{"file": "李清照-尺寸46x70cm.JPG", "title": "李清照", "chapter": "仕女风华", "size": "46x70cm"}, {"file": "李清照二-尺寸46x70cm.jpg", "title": "李清照·二", "chapter": "仕女风华", "size": "46x70cm"}, {"file": "李清照三-尺寸46x70cm.jpg", "title": "李清照·三", "chapter": "仕女风华", "size": "46x70cm"}, {"file": "西施图-尺寸138x70cm.jpg", "title": "西施图", "chapter": "仕女风华", "size": "138x70cm"}, {"file": "西施浣纱-尺寸138x70cm.jpg", "title": "西施浣纱", "chapter": "仕女风华", "size": "138x70cm"}, {"file": "西施浣纱-尺寸70x138cm.jpg", "title": "西施浣纱·竖幅", "chapter": "仕女风华", "size": "70x138cm"}, {"file": "二乔观书-尺寸70x138cm.jpg", "title": "二乔观书", "chapter": "仕女风华", "size": "70x138cm"}, {"file": "四美图-尺寸180x97cm.jpg", "title": "四美图", "chapter": "仕女风华", "size": "180x97cm"}, {"file": "反弹琵琶-70x100cm.jpg", "title": "反弹琵琶", "chapter": "仕女风华", "size": "70x100cm"}, {"file": "牡丹仙子-尺寸138x70cm.JPG", "title": "牡丹仙子", "chapter": "仕女风华", "size": "138x70cm"}, {"file": "丛林仙子-70x138cm.JPG", "title": "丛林仙子", "chapter": "仕女风华", "size": "70x138cm"}, {"file": "双娇-70x98cm.jpg", "title": "双娇", "chapter": "仕女风华", "size": "70x98cm"}, {"file": "桃花浴美人-70x98cm.jpg", "title": "桃花浴美人", "chapter": "仕女风华", "size": "70x98cm"}, {"file": "采药女-尺寸70x138cm.jpg", "title": "采药女", "chapter": "仕女风华", "size": "70x138cm"}, {"file": "回眸-尺寸46x70cm.jpg", "title": "回眸", "chapter": "仕女风华", "size": "46x70cm"}, {"file": "回眸-尺寸70x46cm.jpg", "title": "回眸·横幅", "chapter": "仕女风华", "size": "70x46cm"}, {"file": "回眸一笑百媚生-尺寸70x138cm.jpg", "title": "回眸一笑百媚生", "chapter": "仕女风华", "size": "70x138cm"}, {"file": "林黛玉-尺寸70x100cm.jpg", "title": "林黛玉", "chapter": "红楼遗梦", "size": "70x100cm"}, {"file": "黛玉葬花-尺寸138x70cm.jpg", "title": "黛玉葬花", "chapter": "红楼遗梦", "size": "138x70cm"}, {"file": "宝黛读西厢-70x98cm.jpg", "title": "宝黛读西厢", "chapter": "红楼遗梦", "size": "70x98cm"}, {"file": "林黛玉书签-6x18cm.jpg", "title": "林黛玉·书签", "chapter": "红楼遗梦", "size": "6x18cm"}, {"file": "贾宝玉书签-6x18cm.jpg", "title": "贾宝玉·书签", "chapter": "红楼遗梦", "size": "6x18cm"}, {"file": "李白诗意-35x100cm.jpg", "title": "李白诗意", "chapter": "诗词意境", "size": "35x100cm"}, {"file": "李白诗意二-35x100cm.jpg", "title": "李白诗意·二", "chapter": "诗词意境", "size": "35x100cm"}, {"file": "李白诗意三-35x100cm.jpg", "title": "李白诗意·三", "chapter": "诗词意境", "size": "35x100cm"}, {"file": "陶渊明诗意-尺寸35x70cm.jpg", "title": "陶渊明诗意", "chapter": "诗词意境", "size": "35x70cm"}, {"file": "寒江独钓-尺寸70x138cm.jpg", "title": "寒江独钓", "chapter": "诗词意境", "size": "70x138cm"}, {"file": "愿者上钩-尺寸35x70cm.jpg", "title": "愿者上钩", "chapter": "文人风骨", "size": "35x70cm"}, {"file": "竹林七贤-尺寸138x70cm.jpg", "title": "竹林七贤", "chapter": "文人风骨", "size": "138x70cm"}, {"file": "八仙过海-尺寸180x97cm.jpg", "title": "八仙过海", "chapter": "神话仙佛", "size": "180x97cm"}, {"file": "观音-尺寸46x70cm.jpg", "title": "观音", "chapter": "神话仙佛", "size": "46x70cm"}, {"file": "赶集-尺寸70x46cm.jpg", "title": "赶集", "chapter": "市井百态", "size": "70x46cm"}, {"file": "惠安女-尺寸70x70cm.jpg", "title": "惠安女", "chapter": "市井百态", "size": "70x70cm"}, {"file": "惠安女-50x60cm.JPG", "title": "惠安女·二", "chapter": "市井百态", "size": "50x60cm"}, {"file": "读书少女-尺寸70x46cm.jpg", "title": "读书少女", "chapter": "时代人物", "size": "70x46cm"}, {"file": "都市白领-尺寸46x70cm.jpg", "title": "都市白领", "chapter": "时代人物", "size": "46x70cm"}, {"file": "陪伴-尺寸70x46cm.jpg", "title": "陪伴", "chapter": "时代人物", "size": "70x46cm"}, {"file": "足球宝贝-尺寸70x100cm.jpg", "title": "足球宝贝", "chapter": "时代人物", "size": "70x100cm"}, {"file": "足球宝贝-70x138cm.jpg", "title": "足球宝贝·竖幅", "chapter": "时代人物", "size": "70x138cm"}, {"file": "年年有鱼-70x70cm.jpg", "title": "年年有鱼", "chapter": "时代人物", "size": "70x70cm"}, {"file": "裸女-尺寸46x70cm.jpg", "title": "裸女", "chapter": "时代人物", "size": "46x70cm"}, {"file": "思-70x70cm.JPG", "title": "思", "chapter": "时代人物", "size": "70x70cm"}, {"file": "少女与小猫-50x50cm.jpg", "title": "少女与小猫", "chapter": "时代人物", "size": "50x50cm"}, {"file": "父子情深-197x100cm.jpg", "title": "父子情深", "chapter": "人物肖像", "size": "197x100cm"}];
+const RENWU_CHAPTERS = ["人物肖像", "仕女风华", "市井百态", "文人风骨", "时代人物", "神话仙佛", "红楼遗梦", "诗词意境"];
+
+// 童趣卷数据
+const TONGQU_DATA = [{"file": "人物_头像_1_001.jpg", "title": "人物 头像 1 001", "chapter": "人物头像", "size": ""}, {"file": "童趣_编号_002.jpg", "title": "童趣 编号 002", "chapter": "其他作品", "size": ""}, {"file": "童趣_编号_003.jpg", "title": "童趣 编号 003", "chapter": "其他作品", "size": ""}, {"file": "童趣_005_副本_001.jpg", "title": "童趣 005 副本 001", "chapter": "其他作品", "size": ""}, {"file": "艺术品_扇面_001.jpg", "title": "艺术品 扇面 001", "chapter": "扇面雅韵", "size": ""}, {"file": "童趣_00001_2_副本_001.jpg", "title": "童趣 00001 2 副本 001", "chapter": "其他作品", "size": ""}, {"file": "人物_小女孩_1_001.jpg", "title": "人物 小女孩 1 001", "chapter": "童真世界", "size": ""}, {"file": "童趣_相机拍摄_1453.jpg", "title": "童趣 相机拍摄 1453", "chapter": "其他作品", "size": ""}, {"file": "人物_头像_1_v1_001.jpg", "title": "人物 头像 1 V1 001", "chapter": "人物头像", "size": ""}, {"file": "童趣_相机拍摄_0770.jpg", "title": "童趣 相机拍摄 0770", "chapter": "其他作品", "size": ""}, {"file": "童趣_相机拍摄_0758.jpg", "title": "童趣 相机拍摄 0758", "chapter": "其他作品", "size": ""}, {"file": "童趣_编号_0001.jpg", "title": "童趣 编号 0001", "chapter": "其他作品", "size": ""}, {"file": "童趣_相机拍摄_0774.jpg", "title": "童趣 相机拍摄 0774", "chapter": "其他作品", "size": ""}, {"file": "童趣_编号_004.jpg", "title": "童趣 编号 004", "chapter": "其他作品", "size": ""}, {"file": "童趣_编号_005.jpg", "title": "童趣 编号 005", "chapter": "其他作品", "size": ""}, {"file": "童趣_相机拍摄_0749.jpg", "title": "童趣 相机拍摄 0749", "chapter": "其他作品", "size": ""}, {"file": "童趣_相机拍摄_0761.jpg", "title": "童趣 相机拍摄 0761", "chapter": "其他作品", "size": ""}, {"file": "童趣_相机拍摄_1696.jpg", "title": "童趣 相机拍摄 1696", "chapter": "其他作品", "size": ""}, {"file": "人物_头像_1_v2_001.jpg", "title": "人物 头像 1 V2 001", "chapter": "人物头像", "size": ""}, {"file": "童趣_0001的_副本_001.jpg", "title": "童趣 0001的 副本 001", "chapter": "其他作品", "size": ""}, {"file": "童趣_编号_007.jpg", "title": "童趣 编号 007", "chapter": "其他作品", "size": ""}, {"file": "童趣_编号_006.jpg", "title": "童趣 编号 006", "chapter": "其他作品", "size": ""}, {"file": "童趣_007_副本_001.jpg", "title": "童趣 007 副本 001", "chapter": "其他作品", "size": ""}];
+const TONGQU_CHAPTERS = ["人物头像", "作品精选", "其他作品", "四季童趣", "扇面雅韵", "童真世界"];
+
+// 鉴赏文字
+const COMMENTARIES = {"李清照-尺寸46x70cm.JPG": "此作以工笔仕女为体，人物神态恬淡从容，眉目间透出易安居士「却把青梅嗅」之婉约气质。衣纹线条流畅舒婉，设色清雅，背景留白得当，恰合「诗中有画」之境。", "李清照二-尺寸46x70cm.jpg": "续写易安词意，此幅仕女执卷凝思，目光低垂若有所悟。画家以淡墨轻染衣袂，层次丰富而不失通透，人物与空间的关系处理得含蓄而有余韵。", "李清照三-尺寸46x70cm.jpg": "三写易安，情致愈深。此作仕女侧身而立，衣带当风，有曹衣出水、吴带当风之致。题款与画面呼应，书法亦见功力，诗书画三绝合一。", "西施图-尺寸138x70cm.jpg": "西施浣纱，千古绝艳。此作取西施溪边捣纱之景，人物姿态自然生动，不以工细炫技，而以气韵胜。溪水、山石点缀得宜，衬托出「闭月羞花」之意境。", "西施浣纱-尺寸138x70cm.jpg": "与《西施图》异曲同工而别开生面，此幅侧重浣纱动态，人物俯身临水，倒影与实体重叠，构图巧妙。色彩以青绿为主调，清新脱俗。", "西施浣纱-尺寸70x138cm.jpg": "竖幅章法最考验布局功力，此作自上而下展开溪山与人物，高远之势自然而成。西施立于画面中下部，目光俯仰之间，秋水共长天一色。", "二乔观书-尺寸70x138cm.jpg": "大乔小乔，江东双璧。此作取二女观书之雅事，一人展卷、一人凝思，顾盼之间情致宛然。衣饰一素一彩，变化中见统一，画家对「二乔」题材的处理颇有新意。", "四美图-尺寸180x97cm.jpg": "西施、王昭君、貂蝉、杨玉环，四大美人荟萃一图，最为难在「各尽其态」而不重复。此作以横幅长卷式展开，四人姿态、服饰、背景各具特色，排列疏密有致，蔚为大观。", "反弹琵琶-70x100cm.jpg": "反弹琵琶为敦煌壁画经典意象，此作取意其间而自出机杼。舞者身姿扭转，裙裾翻飞，线条极具动势。设色浓淡相宜，既有壁画之厚重，又兼具工笔之精微。", "牡丹仙子-尺寸138x70cm.JPG": "牡丹为花中之王，仙子为人中之粹。此作以大写意笔法写牡丹花丛，以工笔写仙子容颜，工写结合，相得益彰。画面富丽堂皇而不失清雅，气象宏大。", "丛林仙子-70x138cm.JPG": "仙子穿行丛林之间，花叶扶疏，光影斑驳。此作在工笔重彩中融入写生意味，枝叶穿插避让有条不紊，显示出画家对自然的细致观察与深厚功力。", "双娇-70x98cm.jpg": "双姝并立，各有千秋。此作不以背景喧宾夺主，专注人物情态刻画，眉眼唇鼻之间微妙呼应，体现出「传神写照正在阿堵中」的造型功力。", "桃花浴美人-70x98cm.jpg": "桃李春风，美人与花相映成趣。此作以桃花为背景意象，色彩粉嫩而不艳俗，人物神态悠闲自若，有「人面桃花相映红」之诗意。笔法细腻，渲染层次丰富。", "采药女-尺寸70x138cm.jpg": "采药女题材脱胎于山林隐逸传统，此作人物背负药篓、穿行山径，衣纹用减笔描法，潇洒利落。山石树木以点垛法出之，与人物工细形成对比，意境高古。", "回眸-尺寸46x70cm.jpg": "回眸一瞬，百媚横生。此作捕捉仕女转首回望之动态，颈项与肩胸的扭转关系处理精准，发髻与首服描绘工细，是仕女画中「回眸」题材的佳作。", "回眸-尺寸70x46cm.jpg": "横幅回眸别有一番舒展之意，人物置于画面右侧，左侧留白或缀以湖石、花卉，空间节奏从容。设色以赭石、花青为主，古雅沉稳。", "回眸一笑百媚生-尺寸70x138cm.jpg": "取意白居易《长恨歌》，此作将「回眸一笑」的瞬间定格，眉目含情、唇边隐有笑意，极难在静态画面中传达笑意，此作做到了。", "林黛玉-尺寸70x100cm.jpg": "黛玉为红楼梦人物画第一难写之题，难在「病」与「美」之间的分寸。此作黛玉执卷倚石，眉目间有淡淡的忧郁，却不以病态炫奇，而以清雅出之，恰得潇湘妃子之神髓。", "黛玉葬花-尺寸138x70cm.jpg": "葬花为红楼经典场景，此作黛玉躬身拾花，神情专注而忧伤。落红成阵，花瓣与衣纹皆以精细笔法出之，画面弥漫着「一朝春尽红颜老」的悲剧气息，感染力极强。", "宝黛读西厢-70x98cm.jpg": "宝黛共读《西厢》，是红楼中最温情的场景之一。此作二人并肩坐于山石上，宝玉侧身指点评说，黛玉低头含笑，人物关系亲密而不逾矩，分寸把握恰到好处。", "林黛玉书签-6x18cm.jpg": "书签形制狭长，最考验造型提炼能力。此作以简约线条勾勒黛玉侧影，不事繁饰，清愁淡怨尽在眉目之间。小小方寸，别有隽永之致。", "贾宝玉书签-6x18cm.jpg": "宝玉书签与黛玉成对，此作写宝玉正身立像，神态温润如玉，通灵宝玉佩于胸前，细节处理一丝不苟。与黛玉书签并观，恰如「金玉良缘」之对。", "李白诗意-35x100cm.jpg": "李白诗意，豪放不羁。此作取太白举杯邀月之姿，人物衣袂飘举，似有风来。背景以淡墨写远山，意境空阔，与人物形成虚实对照。", "李白诗意二-35x100cm.jpg": "续写太白诗意，此幅侧重「诗酒风流」之意，人物微醺而立，笔势放达而不失法度。题款位置经营得当，与画面相映成趣。", "李白诗意三-35x100cm.jpg": "三写李白，此作取意「低头思故乡」，人物姿态由豪放转为沉思，神态内敛而深沉。画家以同一人物演绎不同心境，功力可见一斑。", "陶渊明诗意-尺寸35x70cm.jpg": "采菊东篱下，悠然见南山。此作取渊明归隐田园之诗意，人物身着布衣、手持菊花，神态闲适。设色以浅绛为主，有「平淡天真」之致。", "寒江独钓-尺寸70x138cm.jpg": "取意柳宗元《江雪》，此作以大片留白写寒江之寂寥，一叶扁舟、一钓翁，笔墨极简而意境深远。画家对留白的处理尤见功力，可谓「此时无声胜有声」。", "愿者上钩-尺寸35x70cm.jpg": "姜太公钓鱼，愿者上钩。此作取民间典故入画，人物端坐从容，神态超然。用笔简练而形象生动，意境诙谐而不失深意。", "竹林七贤-尺寸138x70cm.jpg": "竹林七贤，魏晋风度。此作以横幅展开七人聚于竹林之场景，各具姿态，或抚琴、或对弈、或饮酒、而清谈，人物间呼应自然。竹叶以双钩法出之，精细入微。", "八仙过海-尺寸180x97cm.jpg": "八仙过海，各显神通。此作构图饱满而不拥挤，八位仙人各执法器，神态各异，踏浪而行。海浪以传统线描法出之，动感十足，气势恢宏。", "观音-尺寸46x70cm.jpg": "观音大士，慈悲庄严。此作以工笔重彩画法绘观音，面容慈祥，衣纹流畅，背光以金线勾勒，庄严肃穆。画家对宗教题材的处理既有虔诚之心，又不失艺术性。", "赶集-尺寸70x46cm.jpg": "赶集为民间生活题材，此作捕捉集市一角，人物动态自然，有浓厚的生活气息。用笔设色略参写意，与工笔仕女画风格迥异而别具特色。", "惠安女-尺寸70x70cm.jpg": "惠安女为福建沿海独特的人文景观，此作以写实笔法描绘惠安女特色服饰与勤劳形象，色彩鲜明，人物生动，是画家拓展题材领域的成功尝试。", "惠安女-50x60cm.JPG": "续写惠安女题材，此幅更为紧凑，人物特写式构图，面部表情与头饰细节刻画更为突出，显示出画家对同一题材的深入探索。", "读书少女-尺寸70x46cm.jpg": "现代少女读书之景，画家以工笔技法写当代人物，线条细腻流畅，设色淡雅清新。少女神态专注，是传统技法与现代题材的融合之作。", "都市白领-尺寸46x70cm.jpg": "都市白领为当代人物画新题材，此作以简洁的线条和明快的设色描绘现代女性形象，干练而不失柔美，体现画家对时代生活的关注。", "陪伴-尺寸70x46cm.jpg": "此作描绘亲子温情场景，人物关系亲密，情感真挚。画家以工细笔法写人物，背景简洁，突出「陪伴」的主题，温馨感人。", "足球宝贝-尺寸70x100cm.jpg": "足球宝贝为时代新貌题材，此作将运动之美与工笔技法结合，人物姿态动感十足，设色明快，是传统笔墨与现代审美的碰撞之作。", "足球宝贝-70x138cm.jpg": "竖幅足球宝贝，人物更为修长，动感更强。背景以简笔写出球场意象，与人物形成虚实对比，构图大胆而成功。", "年年有鱼-70x70cm.jpg": "年年有鱼取「年余」之谐音，为传统吉祥题材。此作以工笔写仕女与鱼，设色鲜艳喜庆，人物与鱼的关系处理得生动有趣，充满生活情趣。", "裸女-尺寸46x70cm.jpg": "此作以工笔技法绘人体，线条优美流畅，设色含蓄雅致，在传统与当代之间取得微妙平衡，展现出画家扎实的造型功力与艺术探索的勇气。", "思-70x70cm.JPG": "「思」之一字，为人物画最难传达。此作以简约构图写沉思之态，人物眉目含远意，手托香腮，神韵悠然，可谓「思」字之佳作。", "少女与小猫-50x50cm.jpg": "少女与小猫，温馨可爱。此作以团扇形式构图，人物与动物互动自然，线条柔和，设色温暖，充满生活情趣与人文关怀。", "父子情深-197x100cm.jpg": "此作为大尺幅人物画，描绘父子之间的深厚感情。人物刻画深入，表情真挚，构图饱满而不拥挤，是画家在重大题材上的代表作品。"};
+
+// 个人资料
+const BIOGRAPHY_CN = "女，1988年生于河南商丘，自幼酷爱画画，2007年3月进北京求学，2008年有幸成为著名人物画家张惠斌的关门弟子，2011年在北京画院进修，师从纪清远、卢平，期间得到诸多名家指点。2013年11月木兰文化节期间，于出生地河南商丘首次举办个人画展，由人民日报出版个人画册。同年7月神州杂志社改版首期刊登其画作。2014年7月，江苏省酒类营销杂志将其评为全国最具收藏潜力画家。2014年11月8日至12日，作品参加商丘市妇联组织的\u201C三门峡市第三届特色商品博览会\u201D。2014年11月21日至25日，作品《丛林仙子》入选河南省第十三届新人新作展。2014年12月1日，在中国投资者报刊登作品并接受专访。2014年12月9日，与画海第一人周智慧共同接受CCTV投资理财栏目采访。2018年3月，作品《丰收女》在河南省第二十三届美术新人新作展获奖。";
+const ZHANG_TESTIMONIAL_CN = "我的亲传女弟子学画数年来意志执着坚定，不惧任何艰辛，感动了神灵。在艺术上取得了飞跃的进步，她对中国笔墨的迷恋程度非常人可比拟。 愿素洁坚持一生磨练，我相信最终成就非同小可。";
+const PHOTO_DATA = [{"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sT5JcxEvZ8icic9WJrnzfZVrwmBEJibeXmYhSQB5D4P9HQNU7XofvM0I8Q/0#imgIndex=0", "caption": "温素洁和北京画院同学及导师纪清远在北京画院后花园"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sAtcQQxDqbT5eYW2qcawdDic96RwDUVdbgnleALLzh7t9sWCknVDSCUw/0#imgIndex=1", "caption": "温素洁和大海老师在大海美术馆"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9s7ian3W2lWnbIbXo6tgtJzhohnFia09dbYtdrklYTjSY81Tnr1YVNpYYQ/0#imgIndex=2", "caption": "温素洁和大海老师在大海美术馆"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sDjrVzRYqqgPo8YcH3Ptwk66wzCO1lK0weCCDhKibDQn5N8YZXKvzWeg/0#imgIndex=3", "caption": "温素洁和著名画家马海方在中国美术馆"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sk3BVLPgNIoh2qjlZL0XacrpI8jafIT848K1BEdQ77bqkZdIXYXTPUA/0#imgIndex=4", "caption": "温素洁和著名画家何家英在建国60周年展览会上"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sibasgqfrIs7955wS2ZVm0vEU2ZBKg2Pz7KXwPgu6tCppicA2Xw1FWsrg/0#imgIndex=5", "caption": "温素洁和北京画院院长王明明在北京画院毕业典礼上"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sicRlovHnJFraP1A2rBqRUy0U456ySlPwicDuBQ9ISDNrliaSoRSEiaqyAw/0#imgIndex=6", "caption": "温素洁和李可染夫人邹佩珠在北京画院"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sjOApMjGMxaS2xlW2WibhhjS0FebOlZSXqM7hv9PuPiajVE4k0r7GNIFw/0#imgIndex=7", "caption": "温素洁和徐悲鸿夫人廖静文在北京画院"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sicBLtZicFyibW0BfvEkjTUAtaP93lLFUl5bpbSTFFRs02W5vpcxCKeVUA/0#imgIndex=8", "caption": "温素洁和画家李小可在北京画院毕业典礼上"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9stRMjmQVHPgqUAWgxANb2KuLrCF53NT4OB6ib0ofmxjh7CNxzicEY9zCg/0#imgIndex=9", "caption": "温素洁和著名主持人赵忠祥在聚餐 和张惠斌及夫人在炎黄艺术馆"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9szYrnV7e71USFib67VlYIBqtf7kibLdL8dJW92ZIEVlHtLaQicnhhx9MvQ/0#imgIndex=10", "caption": "温素洁和国学大师文怀沙在文怀沙家里"}, {"url": "http://mmbiz.qpic.cn/mmbiz/fC8RVf6XCZ1KLlyc4jcXYpfcUnveLT9sYWKUuK4nEDF6McaOPfXb0vBgd8UhoPbyibTnYJoO8V1qbBW55VDCrg/0#imgIndex=11", "caption": "温素洁和著名画家刘文西在刘文西画室"}];
+
+// ─── I18N ───
+const I18N = {
+  cn: {
+    brand: '温素洁', hero_ornament: '中国画人物画家', hero_title: '温素洁',
+    hero_subtitle: '以笔墨写时代 · 以丹青传心声', hero_scroll: '向下探索',
+    nav_about: '关于', nav_figure: '人物卷', nav_child: '童趣卷',
+    nav_testimonials: '恩师评语', nav_photos: '名家合影', nav_contact: '联系',
+    about_subtitle: 'About the Artist', about_title: '关于艺术家',
+    figure_subtitle: 'Figure Paintings', figure_title: '人物卷',
+    child_subtitle: 'Childhood & Innocence', child_title: '童趣卷',
+    testimonials_subtitle: 'Teacher Testimonials', testimonials_title: '恩师评语',
+    photos_subtitle: 'Photos with Masters', photos_title: '名家合影',
+    contact_subtitle: 'Get in Touch', contact_title: '联系方式',
+    contact_phone: '手机', chapter_all: '全部', lb_of: '/',
+    timeline_label: '展览年表',
+    teacher_zhang: '张惠斌', teacher_ji: '纪清远',
+    teacher_zhang_role: '著名人物画家 · 恩师', teacher_ji_role: '北京画院画家 · 恩师',
+  },
+  en: {
+    brand: 'Wen Sujie', hero_ornament: 'Chinese Figure Painting Artist',
+    hero_title: 'Wen Sujie', hero_subtitle: 'Brush & Ink Across Time · Art from the Heart',
+    hero_scroll: 'Explore', nav_about: 'About', nav_figure: 'Figures',
+    nav_child: 'Innocence', nav_testimonials: 'Testimonials',
+    nav_photos: 'Photos', nav_contact: 'Contact',
+    about_subtitle: 'About the Artist', about_title: 'About the Artist',
+    figure_subtitle: 'Figure Paintings', figure_title: 'Figure Paintings',
+    child_subtitle: 'Childhood & Innocence', child_title: 'Childhood & Innocence',
+    testimonials_subtitle: 'Teacher Testimonials', testimonials_title: 'Teacher Testimonials',
+    photos_subtitle: 'Photos with Masters', photos_title: 'Photos with Masters',
+    contact_subtitle: 'Get in Touch', contact_title: 'Contact',
+    contact_phone: 'Phone', chapter_all: 'All', lb_of: ' of ',
+    timeline_label: 'Exhibition Timeline',
+    teacher_zhang: 'Zhang Huibin', teacher_ji: 'Ji Qingyuan',
+    teacher_zhang_role: 'Renowned Figure Painter · Mentor',
+    teacher_ji_role: 'Beijing Art Academy · Mentor',
+  }
+};
+
+let currentLang = 'cn';
+let currentFigureChapter = 'all';
+let currentChildChapter = 'all';
+let lbData = [];
+let lbIndex = -1;
+
+function toggleLang() {
+  currentLang = currentLang === 'cn' ? 'en' : 'cn';
+  document.getElementById('langBtn').textContent = currentLang === 'cn' ? 'EN' : '中';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (I18N[currentLang][key]) el.textContent = I18N[currentLang][key];
+  });
+  renderBio(); renderTimeline(); renderTestimonials();
+  renderFilter('filterFigure', RENWU_CHAPTERS, currentFigureChapter, selectFigureChapter);
+  renderFilter('filterChild', TONGQU_CHAPTERS, currentChildChapter, selectChildChapter);
+}
+
+function t(key) { return I18N[currentLang][key] || key; }
+
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+
+// Scroll spy
+const nav = document.getElementById('nav');
+const sections = document.querySelectorAll('section[id], footer[id]');
+const navLinks = document.querySelectorAll('[data-nav]');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 120) current = section.getAttribute('id');
+  });
+  navLinks.forEach(link => link.classList.toggle('active', link.dataset.nav === current));
+});
+
+// Reveal animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Biography
+function renderBio() {
+  const isEn = currentLang === 'en';
+  document.getElementById('bioText').textContent = isEn
+    ? "Female, born in 1988 in Shangqiu, Henan Province, has been passionate about painting since childhood. In March 2007, she came to Beijing to pursue her artistic studies. In 2008, she had the honor of becoming the last disciple of the renowned figure painter Zhang Huibin. In 2011, she furthered her studies at the Beijing Art Academy under the tutelage of Ji Qingyuan and Lu Ping, receiving guidance from numerous masters. In November 2013, she held her first solo exhibition in her hometown of Shangqiu during the Mulan Cultural Festival, with a personal catalogue published by People's Daily Publishing. Her works have been featured in Shenzhou Magazine, Jiangsu Wine Marketing Magazine, and China Investor Journal. In 2014, her work \"Forest Fairy\" was selected for the 13th Henan Province New Artist Exhibition. In March 2018, her work \"Harvest Girl\" won an award at the 23rd Henan Province New Artist Exhibition."
+    : BIOGRAPHY_CN;
+}
+
+function renderTimeline() {
+  const isEn = currentLang === 'en';
+  const items = isEn
+    ? [
+        {year:'2007',text:'Arrived in Beijing to pursue art studies'},
+        {year:'2008',text:'Became the last disciple of renowned figure painter Zhang Huibin'},
+        {year:'2011',text:'Studied at Beijing Art Academy under Ji Qingyuan and Lu Ping'},
+        {year:'2013',text:'First solo exhibition at Mulan Cultural Festival, Shangqiu; Published personal catalogue by People\'s Daily'},
+        {year:'2014',text:'"Forest Fairy" selected for 13th Henan Province New Artist Exhibition; Interviewed by CCTV'},
+        {year:'2018',text:'"Harvest Girl" awarded at 23rd Henan Province New Artist Exhibition'},
+      ]
+    : [
+        {year:'2007',text:'3月进北京求学'},
+        {year:'2008',text:'成为著名人物画家张惠斌关门弟子'},
+        {year:'2011',text:'北京画院进修，师从纪清远、卢平'},
+        {year:'2013',text:'商丘木兰文化节首次个人画展，人民日报出版个人画册'},
+        {year:'2014',text:'作品《丛林仙子》入选河南省第十三届新人新作展；接受CCTV采访'},
+        {year:'2018',text:'作品《丰收女》在河南省第二十三届美术新人新作展获奖'},
+      ];
+  let html = '<h4 style="margin-bottom:16px;font-family:var(--serif);color:var(--ochre);">' + t('timeline_label') + '</h4>';
+  items.forEach(item => {
+    html += '<div class="timeline-item"><span class="timeline-year">' + item.year + '</span> ' + item.text + '</div>';
+  });
+  document.getElementById('timeline').innerHTML = html;
+}
+
+// Gallery rendering
+function imgPathFigure(f) { return './web/' + encodeURI(f); }
+function imgPathChild(f) { return './web_tongqu/' + encodeURI(f); }
+
+function renderFilter(cid, chapters, current, onSelect) {
+  var c = document.getElementById(cid);
+  var h = '<button class="chapter-btn' + (current === 'all' ? ' active' : '') + '" onclick="' + onSelect.name + "(\\'all\\')" + '">' + t('chapter_all') + '</button>';
+  chapters.forEach(function(ch) {
+    h += '<button class="chapter-btn' + (current === ch ? ' active' : '') + '" onclick="' + onSelect.name + "(\\'" + ch + "\\')" + '">' + ch + '</button>';
+  });
+  c.innerHTML = h;
+}
+
+function selectFigureChapter(ch) {
+  currentFigureChapter = ch;
+  renderFilter('filterFigure', RENWU_CHAPTERS, ch, selectFigureChapter);
+  renderFigureGallery();
+}
+
+function selectChildChapter(ch) {
+  currentChildChapter = ch;
+  renderFilter('filterChild', TONGQU_CHAPTERS, ch, selectChildChapter);
+  renderChildGallery();
+}
+
+function renderFigureGallery() {
+  var items = RENWU_DATA;
+  if (currentFigureChapter !== 'all') items = items.filter(function(d) { return d.chapter === currentFigureChapter; });
+  window._figureLbData = items;
+  var grid = document.getElementById('galleryFigure');
+  grid.innerHTML = items.map(function(d, i) {
+    var chapterBadge = currentFigureChapter === 'all' ? '<span style="font-size:0.65rem;opacity:0.6;">' + d.chapter + '</span>' : '';
+    return '<div class="gallery-item reveal" onclick="openFigureLightbox(' + i + ')"><div class="gallery-item-seal">素</div><img src="' + imgPathFigure(d.file) + '" alt="' + d.title + '" loading="lazy"><div class="gallery-item-overlay"><div class="gallery-item-title">' + d.title + '</div><div class="gallery-item-meta">' + (d.size || '') + ' ' + chapterBadge + '</div></div></div>';
+  }).join('');
+  document.querySelectorAll('#galleryFigure .reveal').forEach(function(el) { observer.observe(el); });
+}
+
+function renderChildGallery() {
+  var items = TONGQU_DATA;
+  if (currentChildChapter !== 'all') items = items.filter(function(d) { return d.chapter === currentChildChapter; });
+  window._childLbData = items;
+  var grid = document.getElementById('galleryChild');
+  grid.innerHTML = items.map(function(d, i) {
+    return '<div class="gallery-item reveal" onclick="openChildLightbox(' + i + ')"><div class="gallery-item-seal">趣</div><img src="' + imgPathChild(d.file) + '" alt="' + d.title + '" loading="lazy"><div class="gallery-item-overlay"><div class="gallery-item-title">' + d.title + '</div><div class="gallery-item-meta">' + d.chapter + '</div></div></div>';
+  }).join('');
+  document.querySelectorAll('#galleryChild .reveal').forEach(function(el) { observer.observe(el); });
+}
+
+// Lightbox
+var lightbox = document.getElementById('lightbox');
+var lbImg = document.getElementById('lbImg');
+var lbCaption = document.getElementById('lbCaption');
+var lbCommentary = document.getElementById('lbCommentary');
+var lbCounter = document.getElementById('lbCounter');
+
+function openFigureLightbox(idx) {
+  lbData = window._figureLbData || RENWU_DATA;
+  lbIndex = idx;
+  showLightboxItem();
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function openChildLightbox(idx) {
+  lbData = window._childLbData || TONGQU_DATA;
+  lbIndex = idx;
+  showLightboxItem();
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function showLightboxItem() {
+  if (lbIndex < 0 || lbIndex >= lbData.length) return;
+  var d = lbData[lbIndex];
+  var isFigure = lbData === window._figureLbData;
+  var path = isFigure ? imgPathFigure(d.file) : imgPathChild(d.file);
+  lbImg.src = path;
+  lbCaption.innerHTML = '<strong>' + d.title + '</strong> &middot; ' + d.chapter + (d.size ? ' &middot; ' + d.size : '');
+  lbCounter.textContent = (lbIndex + 1) + t('lb_of') + lbData.length;
+  if (isFigure) {
+    var cap = COMMENTARIES[d.file] || '';
+    lbCommentary.textContent = cap;
+    lbCommentary.style.display = cap ? 'block' : 'none';
+  } else { lbCommentary.style.display = 'none'; }
+}
+
+function lbNav(dir) {
+  lbIndex += dir;
+  if (lbIndex < 0) lbIndex = lbData.length - 1;
+  if (lbIndex >= lbData.length) lbIndex = 0;
+  showLightboxItem();
+}
+
+function closeLightbox() { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+
+document.addEventListener('keydown', function(e) {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+});
+
+lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
+
+// Testimonials
+function renderTestimonials() {
+  var isEn = currentLang === 'en';
+  var zhangText = isEn
+    ? 'My dear female disciple has studied painting for several years with unwavering determination, undaunted by any hardship, moving the heavens. She has made tremendous progress in art, and her devotion to Chinese brush and ink is beyond comparison. May Sujie persist in a lifetime of refinement \u2014 I believe her ultimate achievements will be extraordinary.'
+    : ZHANG_TESTIMONIAL_CN;
+  var jiText = isEn
+    ? '(The esteemed teacher Ji Qingyuan\'s handwritten testimonial is presented as a calligraphy piece, commending the artist\'s artistic talent and dedication.)'
+    : '\u6069\u5E08\u7EAA\u6E05\u8FDC\u7684\u4EB2\u7B14\u8BC4\u8BED\u4EE5\u4E66\u6CD5\u5F62\u5F0F\u5448\u73B0\uFF0C\u5BF9\u827A\u672F\u5929\u5206\u4E0E\u52E4\u594B\u7ED9\u4E88\u5145\u5206\u80AF\u5B9A\u3002';
+  document.getElementById('testimonialsGrid').innerHTML =
+    '<div class="testimonial-card"><div class="testimonial-quote-mark">\u201C</div><div class="testimonial-text">' + zhangText + '</div><div class="testimonial-author">' + t('teacher_zhang') + '</div><div class="testimonial-role">' + t('teacher_zhang_role') + '</div><div class="testimonial-stamp">\u60E0</div></div>' +
+    '<div class="testimonial-card"><div class="testimonial-quote-mark">\u201C</div><div class="testimonial-text">' + jiText + '</div><div class="testimonial-author">' + t('teacher_ji') + '</div><div class="testimonial-role">' + t('teacher_ji_role') + '</div><div class="testimonial-stamp">\u7EAA</div></div>';
+}
+
+// Photo wall
+function renderPhotoWall() {
+  document.getElementById('photoWall').innerHTML = PHOTO_DATA.map(function(p) {
+    return '<div class="photo-item reveal"><img src="' + p.url + '" alt="' + p.caption + '" loading="lazy" onerror="this.style.display=\'none\';this.parentElement.style.display=\'none\';"><div class="photo-item-caption">' + p.caption + '</div></div>';
+  }).join('');
+  document.querySelectorAll('#photoWall .reveal').forEach(function(el) { observer.observe(el); });
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+  renderBio();
+  renderTimeline();
+  renderFilter('filterFigure', RENWU_CHAPTERS, 'all', selectFigureChapter);
+  renderFigureGallery();
+  renderFilter('filterChild', TONGQU_CHAPTERS, 'all', selectChildChapter);
+  renderChildGallery();
+  renderTestimonials();
+  renderPhotoWall();
+});
+</script>
+</body>
+</html>
